@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+    color: white;
+    background-color: #f0f0f0; /* Default to light mode background */
+    background-image: url('assets/White.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f0f0f0;
+    background-image: url('../assets/White.webp');
+
+    color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: black;
+    background-image: url('../assets/Black.webp');
+
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links li {
+    text-transform: uppercase;
+}
+
+nav .nav-links li a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 500;
+}
+
+body.light-mode nav .nav-links li a {
+    color: #333;
+}
+
+nav .nav-links li a:hover {
+    color: #ff7c7c;
+}
+
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 50px; /* Adjusted to move the toggle slightly to the right */
+}
+
+.toggle-wrapper {
+    width: 120px; /* Fixed width to ensure consistency */
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    padding: 5px;
+    transition: transform 0.3s ease; /* Adding transition effect */
+}
+
+.toggle-switch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* Text for the modes (Light and Dark) */
+.mode-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+/* Light mode text in the button */
+.mode-text.mode-light {
+    opacity: 1;
+    position: absolute;
+    left: 10px;
+}
+
+/* Dark mode text in the button */
+.mode-text.mode-dark {
+    opacity: 0;
+    position: absolute;
+    right: 10px;
+}
+
+/* Light mode to Dark mode toggle styles */
+body.light-mode .toggle-switch {
+    transform: scaleX(1); /* Keep the toggle button in the same position */
+}
+
+body.light-mode .mode-text.mode-light {
+    opacity: 1; /* Show Light Mode text */
+}
+
+body.light-mode .mode-text.mode-dark {
+    opacity: 0; /* Hide Dark Mode text */
+}
+
+body.dark-mode .toggle-switch {
+    transform: scaleX(1.1); /* Slightly scale the toggle button to give the appearance of movement */
+}
+
+body.dark-mode .mode-text.mode-light {
+    opacity: 0; /* Hide Light Mode text */
+}
+
+body.dark-mode .mode-text.mode-dark {
+    opacity: 1; /* Show Dark Mode text */
+}
